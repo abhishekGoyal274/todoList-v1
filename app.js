@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
-const day = require(__dirname + "/static/logics/getdate.js");
+const day = require(__dirname + "/static/logics/getDate.js");
 
 app = express();
 app.use(express.static("static"));
@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Listening port SetUp
-app.listen("3000", function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Listening to port 3000!");
 });
 
